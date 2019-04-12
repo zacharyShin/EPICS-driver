@@ -1,0 +1,11 @@
+##include "xxxRecord.dbd"
+
+##include "base.dbd"
+include "stream.dbd"
+include "asyn.dbd"
+
+#device(xxx,CONSTANT,devXxxSoft,"SoftChannel")
+
+registrar(drvAsynIPPortRegisterCommands)
+registrar(drvAsynSerialPortRegisterCommands)
+registrar(vxi11RegisterCommands)

@@ -1,0 +1,42 @@
+#!../../bin/linux-x86_64/pm
+
+## You may have to change pm to something else
+## everywhere it appears in this file
+
+< envPaths
+
+#cd "${TOP}"
+
+## Register all support components
+dbLoadDatabase("../../dbd/pm.dbd",0,0)
+pm_registerRecordDeviceDriver(pdbbase) 
+
+#where can protocols be located?
+#epicsEnvSet "STREAM_PROTOCOL_PATH", "${TOP}/protocols/"
+epicsEnvSet "STREAM_PROTOCOL_PATH", "../../protocols/"
+
+#example telnet style IP port setup
+#drvAsynIPPortConfigure "pm", "192.168.206.21:7777"
+
+drvAsynSerialPortConfigure ("pfcu","/dev/ttyM4")
+asynSetOption ("pfcu", 0, "baud", "9600")
+asynSetOption ("pfcu", 0, "bits", "8")
+asynSetOption ("pfcu", 0, "parity", "none")
+asynSetOption ("pfcu", 0, "stop", "1")
+asynSetOption ("pfcu", 0, "clocal", "Y")
+asynSetOption ("pfcu", 0, "crtscts", "N")
+
+#asynOctetSetInputEos "pfcu",0,"\r\n"
+#asynOctetSetOutputEos "pfcu",0,"\r\n"
+
+asynSetTraceIOMask("pfcu",0,2)
+asynSetTraceMask("pfcu",0,9)
+
+
+## Load record instances
+dbLoadRecords("../../db/pfcu.db","user=wuxt")
+
+iocInit()
+
+## Start any sequence programs
+#seq sncpm,"user=wuxt"

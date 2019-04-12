@@ -1,0 +1,80 @@
+
+record(bo, "$(user):InsertFil1")
+{
+        field(DESC, "Servert filter Number one")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto InsFil(1) pfcu")
+	field(OMSL, "supervisory")
+	field(ZNAM, "Insert")
+	field(ONAM, "Insert")
+}
+
+record(bo, "$(user):RemoveFil1")
+{
+        field(DESC, "Remove filter number one")
+	field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto RemFil(1) pfcu")
+        field(OMSL, "supervisory")
+	field(ZNAM, "Remove")
+        field(ONAM, "Remove")
+}
+
+record(bo, "$(user):InsertFil2")
+{
+        field(DESC, "Servert filter Number two")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto InsFil(2) pfcu")
+        field(OMSL, "supervisory")
+        field(ZNAM, "Insert")
+        field(ONAM, "Insert")
+}
+
+record(bo, "$(user):RemoveFil2")
+{
+        field(DESC, "Remove filter number two")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto RemFil(2) pfcu")
+        field(OMSL, "supervisory")
+        field(ZNAM, "Remove")
+        field(ONAM, "Remove")
+}
+record(bo, "$(user):InsertFil3")
+{
+        field(DESC, "Servert filter Number three")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto InsFil(3) pfcu")
+        field(OMSL, "supervisory")
+        field(ZNAM, "Insert")
+        field(ONAM, "Insert")
+}
+
+record(bo, "$(user):RemoveFil3")
+{
+        field(DESC, "Remove filter number three")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto RemFil(3) pfcu")
+        field(OMSL, "supervisory")
+        field(ZNAM, "Remove")
+        field(ONAM, "Remove")
+}
+record(bo, "$(user):InsertFil4")
+{
+        field(DESC, "Servert filter Number four")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto InsFil(4) pfcu")
+        field(OMSL, "supervisory")
+        field(ZNAM, "Insert")
+        field(ONAM, "Insert")
+}
+
+record(bo, "$(user):RemoveFil4")
+{
+        field(DESC, "Remove filter number four")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto RemFil(4) pfcu")
+        field(OMSL, "supervisory")
+        field(ZNAM, "Remove")
+        field(ONAM, "Remove")
+}
+
+

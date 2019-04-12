@@ -1,0 +1,20 @@
+
+record(bo, "$(user):InsertFil1")
+{
+        field(DESC, "Servert filter Number one")
+        field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto InsFil pfcu")
+	field(OMSL, "supervisory")
+	field(ZNAM, "Insert")
+	field(ONAM, "Insert")
+}
+
+record(bo, "$(user):RemoveFil1")
+{
+        field(DESC, "Remove filter number one")
+	field(DTYP, "stream")
+        field(OUT,  "@pfcu.proto RemFil pfcu")
+        field(OMSL, "supervisory")
+	field(ZNAM, "Remove")
+        field(ONAM, "Remove")
+}

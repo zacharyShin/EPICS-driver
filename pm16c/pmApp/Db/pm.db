@@ -1,0 +1,179 @@
+record(stringin, "$(user):Ver")
+{
+	field(DESC, "firmware version")
+	field(DTYP, "stream")
+	field(INP,  "@pm.proto VER pm")
+	field(SCAN, "1 second")
+}
+record(bi, "$(user):R_Loc-Rem")
+{
+	field(DESC, "read Loc-Rem status")
+        field(DTYP, "stream")
+	field(INP,  "@pm.proto LRS pm")
+        field(SCAN, "1 second")
+	field(ZNAM, "L")
+	field(ONAM, "R")
+}
+
+record(bo, "$(user):S_Loc-Rem")
+{
+        field(DESC, "set Loc-Rem mode")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto SLR pm")
+	field(OMSL, "supervisory")
+	field(ZNAM, "LOC")
+	field(ONAM, "REM")
+}
+
+record(bo, "$(user):ASSTP")
+{
+        field(DESC, "All motors stop with deceleration")
+	field(DTYP, "stream")
+        field(OUT,  "@pm.proto ASSTP pm")
+        field(OMSL, "supervisory")
+	field(ZNAM, "ASSTP")
+        field(ONAM, "ASSTP")
+}
+
+record(bo, "$(user):AESTP")
+{
+        field(DESC, "All motors stop without deceleration")
+	field(DTYP, "stream")
+        field(OUT,  "@pm.proto AESTP pm")
+        field(OMSL, "supervisory")
+	field(ZNAM, "AESTP")
+        field(ONAM, "AESTP")
+}
+
+record(longout, "$(user):AbsP0")
+{
+        field(DESC, "motor_0 AbsPosition")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto AbsP(0) pm")
+        field(OMSL, "supervisory")
+	#field(PINI, "YES")
+}
+
+record(longout, "$(user):AbsP1")
+{
+	field(DESC, "motor_0 AbsPosition")
+	field(DTYP, "stream")
+	field(OUT,  "@pm.proto AbsP(1) pm")
+	field(OMSL, "supervisory")
+}
+
+record(longout, "$(user):AbsP2")
+{
+	field(DESC, "motor_0 AbsPosition")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto AbsP(2) pm")
+	field(OMSL, "supervisory")
+}
+
+record(longout, "$(user):AbsP3")
+{
+	field(DESC, "motor_0 AbsPosition")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto AbsP(3) pm")
+	field(OMSL, "supervisory")
+}
+
+record(longout, "$(user):AbsBP0")
+{
+        field(DESC, "motor_0 AbsPosition")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto AbsBP(0) pm")
+	field(OMSL, "supervisory")
+}
+
+record(longout, "$(user):AbsSP0")
+{
+        field(DESC, "motor_0 AbsPosition")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto AbsSP(0) pm")
+        field(OMSL, "supervisory")
+}
+
+
+record(longin, "$(user):PS0")
+{
+	field(DESC, "motor_0 AbsPosition readback")
+	field(DTYP, "stream")
+	field(INP,  "@pm.proto PS(0) pm")
+	field(SCAN, "1 second")
+}
+
+record(longin, "$(user):PS1")
+{
+        field(DESC, "motor_0 AbsPosition readback")
+        field(DTYP, "stream")
+        field(INP,  "@pm.proto PS(1) pm")
+        field(SCAN, "1 second")
+}
+
+record(longin, "$(user):PS2")
+{
+        field(DESC, "motor_0 AbsPosition readback")
+        field(DTYP, "stream")
+        field(INP,  "@pm.proto PS(2) pm")
+        field(SCAN, "1 second")
+}
+
+record(longin, "$(user):PS3")
+{
+        field(DESC, "motor_0 AbsPosition readback")
+        field(DTYP, "stream")
+        field(INP,  "@pm.proto PS(3) pm")
+        field(SCAN, "1 second")
+}
+
+record(longin, "$(user):RFL0")
+{
+        field(DESC, "motor_0 CW limit readback")
+        field(DTYP, "stream")
+        field(INP,  "@pm.proto RFL(0) pm")
+        field(SCAN, "1 second")
+}
+record(longout, "$(user):SFL0")
+{
+	field(DESC, "set CW limit of motor_0")
+        field(DTYP, "stream")
+	field(OUT,  "@pm.proto SFL(0) pm")
+        field(OMSL, "supervisory")
+}
+
+record(longin, "$(user):RBL0")
+{
+        field(DESC, "motor_0 CCW limit readback")
+        field(DTYP, "stream")
+        field(INP,  "@pm.proto RBL(0) pm")
+        field(SCAN, "1 second")
+}
+record(longout, "$(user):SBL0")
+{
+        field(DESC, "set CCW limit of motor_0")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto SBL(0) pm")
+        field(OMSL, "supervisory")
+}
+
+
+record(bo, "$(user):JogP0")
+{
+	field(DESC, "motor_0 JogP")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto JOGP(0) pm")
+        field(OMSL, "supervisory")
+        field(ZNAM, "JOGP")
+        field(ONAM, "JOGP")
+}
+
+record(bo, "$(user):JogN0")
+{
+        field(DESC, "motor_0 JogN")
+        field(DTYP, "stream")
+        field(OUT,  "@pm.proto JOGN(0) pm")
+        field(OMSL, "supervisory")
+        field(ZNAM, "JOGN")
+        field(ONAM, "JOGN")
+}

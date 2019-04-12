@@ -1,0 +1,19 @@
+# example stream protocol file
+
+Terminator = CR LF;
+ReplyTimeout = 10000; # 10 sec is very long, for keyboard input
+ReadTimeout = 1000;   # also long for keyboard input
+ExtraInput = Ignore;
+
+
+# note the field access
+InSFil {
+    out "!PFCU03 I\$1";
+#   ExtraInput;
+}
+
+RemFil {
+    out"!PFCU03 R\$1";
+ #   ExtraInput;
+}
+

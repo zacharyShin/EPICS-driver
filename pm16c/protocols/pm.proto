@@ -1,0 +1,105 @@
+# example stream protocol file
+
+Terminator = CR LF;
+ReplyTimeout = 10000; # 10 sec is very long, for keyboard input
+ReadTimeout = 1000;   # also long for keyboard input
+ExtraInput = Ignore;
+
+
+# note the field access
+VER {
+    out "VER?";
+    in "%39c";
+}
+
+LRS {
+    out "STQ?";
+    in "%{L|R}";
+}
+
+SLR {
+    out "%{LOC|REM}";
+    @init {LRS;}
+}
+
+PS0{
+    out"PS?0";
+    in"%d";
+}
+
+AbsP0{
+    out"ABS0%d";
+    @init {PS0;}
+}
+RFL{
+    out"FL?\$1";
+    in"%d";
+}
+SFL{
+    out"FL\$1%d";
+    @init {RFL;}
+}
+RBL{
+    out"BL?\$1";
+    in"%d";
+}
+SBL{
+    out"BL\$1%d";
+    @init {RBL;}
+}
+
+PS{
+    out"PS?\$1";
+    in"%d";
+}
+
+AbsP{
+    out"ABS\$1%d";
+    @init {PS;}
+}
+
+AbsBP{
+    out"ABS\$1B%d";
+    @init {PS;}
+}
+
+AbsSP{
+    out"ABS\$1S%d";
+    @init {PS;}
+}
+
+JOGP{
+    out"JOGP\$1";
+   ## @init {PS;}
+}
+JOGN{
+    out"JOGN\$1";
+   ## @init {PS;}
+}
+ASSTP{
+    out"ASSTP";	
+}
+AESTP{
+    out"AESTP";
+}
+
+li { 
+    out "%(NAME)s [int] ? ";
+    in "%i";
+}
+
+Command {
+    out "%s";
+}
+
+info {
+    out "%s";
+    in "%39c";
+}
+
+spy {
+    extraInput=ignore;
+    PollPeriod = 100;
+    in "%39c";
+}
+
