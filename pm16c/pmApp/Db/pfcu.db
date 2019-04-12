@@ -77,4 +77,13 @@ record(bo, "$(user):RemoveFil4")
         field(ONAM, "Remove")
 }
 
+record(longin, "$(user):InqFilPos")
+{
+	field(DESC, "Inquire the filter position")
+	field(DTYP, "stream")
+	field(INP,  "@pfcu.proto InqFilPos pfcu")
+	field(SCAN, "Passive")
+	field(LOPR, 0)
+	field(HOPR, 15)
+}
 
