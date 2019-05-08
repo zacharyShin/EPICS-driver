@@ -1,0 +1,9 @@
+# Example substitutions file
+
+file db/dbPFCU.db {
+    pattern { user, no }
+        { "1w1a", 1 }
+        { "1w1a", 2 }
+	{ "1w1a", 3 }
+	{ "1w1a", 4 }
+}

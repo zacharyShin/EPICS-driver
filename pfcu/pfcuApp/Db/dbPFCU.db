@@ -1,0 +1,64 @@
+record(bo, "$(user):PFCUbo$(no)")
+{
+	field(DESC,  "PFCU filter BO$(no)")
+	field(DTYP,  "Soft Channel")
+	field(ONAM,  "Remove")
+	field(ZNAM,  "Insert")
+	field(FLNK,  "$(user):filterMASK$(no)")
+}
+
+record(calc, "$(user):filterMASK$(no)")
+{
+	field(DESC,  "PFCU filter$(no) mask")
+	field(SCAN,  "Passive")
+	field(CALC,  "(1-A)*$(no)")
+	field(INPA,  "$(user):PFCUbo$(no).VAL PP MS")
+	field(FLNK,  "$(user):PFCUmask")
+}
+
+record(bo, "$(user):debugTest")
+{
+	field(DESC,  "test PV")
+	field(DTYP,  "stream")
+	field(OUT,   "@pfcu.proto debugTest($(user)) pfcu")
+	field(SCAN,  "Passive")
+	field(ONAM,  "High")
+	field(ZNAM,  "Low")
+}
+
+#record(bo, "$(user):insertPFCU")
+#{
+#	field(DESC, "Insert PFCU filter")
+#	field(DTYP, "stream")
+#	field(OUT,  "@testS.proto insertPFCU(3) pfcu")
+#	field(SCAN, "Passive")
+#}
+
+record(calcout, "$(user):PFCUmask")
+{
+	field(DESC, "PFCU filter REMOVE mask")
+#	field(DTYP, "stream")
+	field(CALC, "1000*A+100*B+10*C+D")
+	field(SCAN, "Passive")
+	field(INPA, "$(user):filterMASK1.VAL PP NMS")
+	field(INPB, "$(user):filterMASK2.VAL PP NMS")
+	field(INPC, "$(user):filterMASK3.VAL PP NMS")
+	field(INPD, "$(user):filterMASK4.VAL PP NMS")
+}
+
+record(bo, "$(user):callPFCU")
+{
+	field(DESC,  "call PFCU to insert and remove filters")
+	field(DTYP,  "stream")
+	field(OUT,   "@pfcu.proto callPFCU($(user)) pfcu")
+}
+
+record(longin, "$(user):InqFilPos")
+{
+	field(DESC, "Inquire the filter position")
+	field(DTYP, "stream")
+	field(INP,  "@pfcu.proto InqFilPos pfcu")
+	field(SCAN, "Passive")
+	field(LOPR, 0)
+	field(HOPR, 15)
+}

@@ -1,0 +1,3 @@
+epicsEnvSet("IOC","iocpfcu")
+epicsEnvSet("TOP","/home/guest/epics/pfcu")
+epicsEnvSet("EPICS_BASE","/home/guest/epics/pfcu/../base")
